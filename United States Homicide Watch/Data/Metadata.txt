@@ -1,0 +1,88 @@
+Metadata:
+
+Search terms and search tool you used to find this dataset:
+CDC WONDER > WONDER systems > Mortality > Underlying Causes of Death > Detailed Mortality.
+Table layout options:
+Group by: State, Cause of death
+AND
+Group by: County, Cause of death
+AND
+Group by: County
+(These are different searches)
+Location options:States, All
+Demographics options: Default
+Time options: Any one year (each was downloaded individually)
+AND
+All
+(These are separate searches)
+Weekday, autopsy, and place of death options: Default
+Cause of Death options: ICD code: Injury Intent and Mechanism, Intent: Homicide, Mechanism: All
+Other options: Export
+
+
+URL:
+
+https://wonder.cdc.gov/
+CDC WONDER > WONDER systems > Mortality > Underlying Causes of Death > Detailed Mortality.
+All of the above is on the home page, it is just an instruction of what area on the home page to look.
+
+
+Date Downloaded:
+
+Datasets can be fluid, so be sure you record when you downloaded your data.
+OCT 9, 2019.
+
+
+Authorship:
+
+Record the author, Primary Investigator, or Agency that created the dataset
+Center for Disease Control.
+
+
+Exact name of the dataset and version:
+
+Homicide By Mechanism, State, County, and Year, US 1999-2017.
+
+
+Time period, geography, and/or scope covered:
+
+Geography: US, all states, plus the District of Columbia.
+Time Period: 1999 - 2017
+
+
+Location of dataset overview information:
+
+Overview is found at the start of the technical documentation.
+
+
+Location of technical documentation:
+
+https://wonder.cdc.gov/wonder/help/ucd.html#
+
+
+Data formats:
+
+Note any useful information about the data formats found:
+Downloaded as txt, values separated with tabs. We converted it to csv files.
+
+
+Terms of Use:
+
+Data Use Restrictions:         
+        The Public Health Service Act (42 U.S.C. 242m(d)) provides that the data collected by the National Center for Health Statistics (NCHS) may be used only for the purpose for which they were obtained; any effort to determine the identity of any reported cases, or to use the information for any purpose other than for health statistical reporting and analysis, is against the law. Therefore users will:         
+Use these data for health statistical reporting and analysis only.         
+For sub-national geography, do not present or publish death counts of 9 or fewer or     death rates based on counts of nine or fewer (in figures, graphs, maps, tables, etc.).         
+Make no attempt to learn the identity of any person or establishment included in these data.         
+Make no disclosure or other use of the identity of any person or establishment discovered inadvertently and advise the NCHS Confidentiality Officer of any such discovery. 
+All of CDC WONDER's datasets are covered by the following policy:
+These data are provided for the purpose of statistical reporting and analysis only. The CDC/ATSDR Policy on Releasing and Sharing Data prohibits linking these data with other data sets or information for the purpose of identifying an individual. If the identity of a individual described in a data set is discovered inadvertently, make no disclosure or other use of this information and report the discovery to:
+Associate Director for Science
+Office of Science Policy and Technology Transfer, CDC
+Mail Stop D50
+Phone: 404-639-7240
+
+
+Suggested Citation if provided:
+
+Centers for Disease Control and Prevention, National Center for Health Statistics.         Underlying Cause of Death 1999-2017 on CDC WONDER Online Database, released December, 2018. Data are from the Multiple Cause of Death Files, 1999-2017, as compiled from data provided by the 57 vital statistics jurisdictions through the Vital Statistics Cooperative Program. Accessed at http://wonder.cdc.gov/ucd-icd10.html on Oct 9, 2019 5:08:18 PM
+

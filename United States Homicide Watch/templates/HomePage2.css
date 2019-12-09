@@ -1,0 +1,378 @@
+@charset "utf-8";
+/* CSS Document */
+html {
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+*{
+    font-family: 'Source Sans Pro', sans-serif;
+    background: none;
+    margin-bottom: 0px;
+    max-width: none;
+}
+
+body {
+	background:url("BGI.png");
+	background-repeat: no-repeat;
+  	background-size: auto;
+	background-attachment: fixed;
+	background-position: 50% 50%;
+	width:100%;
+	height:100%;
+	color:white;
+	font-family: 'Source Sans Pro', sans-serif;
+	
+}
+
+nav {
+	display:flex;
+	flex-direction:column;
+	user-select: none;
+}
+
+.theBar {
+  	width: 100%;
+  	background-color: #050912;
+	font-size: 18px;
+  	padding-left: 30px;
+  	padding-right: 10px;
+  	display: flex;
+  	justify-content: space-between;
+  	align-items: center;
+	position:fixed;
+	z-index:999;
+	order:1;
+}
+
+.dropDownYears{
+	color:#6f8bbb;
+	order:2;
+	z-index:999;
+	position:fixed;
+	width: 100%;
+  	background-color: #050912;
+	font-size: 18px;
+	margin-top:60px;
+	list-style-type:none;
+	max-height:40px;
+	
+	display:none;
+	flex-direction: row;
+	justify-content: center;
+	background-color:#050912;
+	border:none;
+	padding:10px;
+}
+.dropdownYearsButtons button{
+	border:none;
+}
+.dropdownYearsButtons input{
+	font-size:18px;
+	display:block;
+	color:white;
+	background-color:#050912;
+	border:none;
+	padding-right: 10px;
+	padding-left: 10px;
+}
+.dropdownYearsButtons input:hover{
+	font-size:18px;
+	display:block;
+	color:white;
+	background-color:#475a7a;
+	border:none;
+}
+
+.dropDownStates{
+	color:#6f8bbb;
+	order:2;
+	z-index:999;
+	position:fixed;
+	width: 100%;
+  	background-color: #050912;
+	font-size: 18px;
+	margin-top:60px;
+	list-style-type:none;
+	max-height:210px;
+	padding-bottom:15px;
+	
+	display:none;
+	flex-direction:column;
+	flex-wrap:wrap;
+	justify-content: space-evenly;
+}
+.dropdownStatesButtons button{
+	display:block;
+	background-color:#050912;
+	border:none;
+	
+}
+.dropdownStatesButtons input{
+	font-size:18px;
+	display:block;
+	color:white;
+	background-color:#050912;
+	border:none;
+}
+.dropdownStatesButtons input:hover{
+	font-size:18px;
+	display:block;
+	color:white;
+	background-color:#475a7a;
+	border:none;
+}
+
+.logo {
+  	display: inline-block;
+}
+
+.navLinksList {	
+	list-style: none;
+  	display: flex;
+}
+
+.navLinks {
+	display: inline-block;
+  	padding: 10px 15px;
+  	text-decoration: none;
+  	color: white;
+	justify-content: center;
+	padding:20px;
+}
+.navLinks a{
+	text-decoration: none;
+	color:white;
+}
+.navLinks:hover {
+  	background-color: #475a7a;
+}
+.navLinks:hover a {
+  color: black;
+}
+.logo img {
+  	width: 175px;
+  	vertical-align: middle;
+}
+
+.MainContainer{
+	display:flex;
+	margin-top:-10px;
+	flex-direction: row;
+	color:white;
+	z-index:2;
+	justify-content: space-between;
+}
+.contentContainer{
+	display:flex;
+	flex-direction:column;
+	width:70%;
+	Background-color:#0b0e13;
+	margin-left:15%;
+}
+.mapAndInfo{
+	order:1;
+	display:flex;
+	flex-direction:column;
+}
+.mapBlock{
+	flex:6;
+	order:1;
+	justify-content: center;
+}
+.interactiveMap{
+    margin-top: 40px;
+    margin-left: 60px;
+    z-index: 1;
+    display: flex;
+    justify-content: space-around;
+}
+.infoBlock{
+	flex:2;
+	order:2;
+	background-color:#475a7a;
+	color:white;
+	z-index:3;
+}
+
+.genericP{
+	margin-bottom: 25px;
+}
+
+.lookForSearcher {
+	order:2;
+	padding: 20px;
+	background-color:#475a7a;
+	display:flex;
+	flex-direction:column;
+	padding-bottom:40px;
+}
+.lookForSearcher form{
+	margin-top:20px;
+	display:flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+	
+}
+.lookForSearcher form div{
+	display:flex;
+	flex-direction: column;
+	font-size: 110%;
+
+}
+.lookForSearcher select[type=text]{
+	font-size: 120%;
+	margin-top:5px;
+    background-color: #D6E0F5;
+    color: black;
+    width: 250px;
+}
+.lookForSearcher button{
+	border:none;
+	background-color:#B5C8ED;
+}
+.lookForSearcher input{
+	background-color:transparent;
+	width:200px;
+	border: none;
+	color:black;
+	font-size:150%
+}
+.lookForSearcher h1{line-height: 40px;}
+.lookForSearcher p{line-height: 20px;}
+
+.resultTrends{
+    
+}
+.aboutContentBlocks{
+    line-height: 28px;
+    padding-left: 40px;
+    padding: 15px;
+    max-width: none;
+}
+.collapsible {
+    background-color: white;
+    color: #444;
+    cursor: pointer;
+    padding: 20px;
+    width: 60%;
+    margin: 20px;
+}
+
+.sectionalBlock {
+    background-color: white;
+}
+.sectionalTitle {
+    padding-left: 20px;
+    padding-bottom: 10px;
+    padding-top: 20px;
+    padding-right: 20px;
+    order: 1;
+}
+.sectionalInnerBlocks {
+	margin: 10px;
+    width: auto;
+    padding: 20px;
+    background-color: #DFEAFF;
+    border-radius: 1em;	
+}
+
+#aboutTheDataTitle{
+	color: black;
+    background-color: white;
+}
+#aboutTheDataBlock{
+	order:4;
+}
+#aboutTheData{
+    display: flex;
+	min-height: 300px;
+    flex-direction: row;
+    order: 4;
+    background-color: white;
+    color: black;
+    padding: 10px;
+    margin-top: 10px;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+}
+#consistBlock {
+    max-width: 600px;
+    background-color: #DFEAFF;
+
+}
+#fromBlock {
+    max-width: 600px;
+    background-color: #DFEAFF;
+}
+#processBlock {
+    max-width: 500px;
+    background-color: #DFEAFF;
+}
+
+#nationalData{
+	order:3;
+	background-color:#0B0E13;
+}
+#nationalDataTitle{
+	color:white;
+}
+#nationalDataInnerBlocks{
+	margin: 10px;
+    width: auto;
+    padding: 20px;
+    background-color: white;
+    color:black;
+    border-radius: 1em;	
+}
+#citationAndDownload{
+	padding: 20px;
+	display:flex;
+	flex-direction:column;
+	order:5;
+	background-color:#475a7a;
+}
+
+/*
+Map Styles
+*/
+#map{
+	user-select: none;
+}
+#states a path { transition: fill .5s ease; 
+	-moz-transition: fill .5s ease; 
+	-webkit-transition: fill .5s ease; 
+	fill: #475A7A;z-index: 99;}
+#states a:hover path { 
+	transition: fill .5s ease; 
+	-moz-transition: fill .5s ease; 
+	-webkit-transition: fill .5s ease; 
+	fill: #718FC2 !important;
+}
+#states a:hover path { 
+	cursor: pointer; 
+	fill: #718FC2;
+}
+#states a text { 
+	cursor: pointer; 
+	fill: #FFFFFF; 
+	display: initial;
+}
+#states a:hover text { 
+	fill: #FFFFFF; 
+	color: #FFFFFF;
+}
+#states a.inverse text:hover { 
+	fill: #FFFFFF;
+}
+#states a.inverse text { 
+	fill: #FFFFFF;
+}
+#states a text { 
+	font-size: 12px;
+}

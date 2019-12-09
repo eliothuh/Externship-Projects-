@@ -1,0 +1,206 @@
+@charset "utf-8";
+/* CSS Document */
+html {
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+*{
+  font-family: 'Source Sans Pro', sans-serif;
+}
+body {
+	background:url("BGI.png");
+	background-repeat: no-repeat;
+  	background-size: auto;
+	background-attachment: fixed;
+	color:white;
+	font-family: 'Source Sans Pro', sans-serif;
+	
+}
+
+nav {
+	display:flex;
+	flex-direction:column;
+}
+
+.theBar {
+  	width: 100%;
+  	background-color: #050912;
+	font-size: 18px;
+  	padding-left: 30px;
+  	padding-right: 10px;
+  	display: flex;
+  	justify-content: space-between;
+  	align-items: center;
+	position:fixed;
+	z-index:999;
+	order:1;
+}
+.dropDownYears{
+	color:#6f8bbb;
+	order:2;
+	z-index:999;
+	position:fixed;
+	width: 100%;
+  	background-color: #050912;
+	font-size: 18px;
+	margin-top:60px;
+	list-style-type:none;
+	max-height:40px;
+	
+	display:none;
+	background-color:#050912;
+	border:none;
+	padding:10px;
+}
+.dropdownYearsButtons button{
+	border:none;
+	
+}
+.dropdownYearsButtons button:hover{
+	background-color:red;
+	
+}
+.dropdownYearsButtons input{
+	font-size:18px;
+	display:block;
+	color:white;
+	background-color:#050912;
+	border:none;
+}
+.dropdownYearsButtons input:hover{
+	font-size:18px;
+	display:block;
+	color:white;
+	background-color:#475a7a;
+	border:none;
+}
+
+.dropDownStates{
+	color:#6f8bbb;
+	order:2;
+	z-index:999;
+	position:fixed;
+	width: 100%;
+  	background-color: #050912;
+	font-size: 18px;
+	margin-top:60px;
+	list-style-type:none;
+	max-height:210px;
+	
+	display:none;
+	flex-direction:column;
+	flex-wrap:wrap;
+	justify-content: space-evenly;
+}
+.dropdownStatesButtons button{
+	display:block;
+	background-color:#050912;
+	border:none;
+	
+}
+.dropdownStatesButtons button:hover{
+	background-color:red;
+	
+}
+.dropdownStatesButtons input{
+	font-size:18px;
+	display:block;
+	color:white;
+	background-color:#050912;
+	border:none;
+}
+.dropdownStatesButtons input:hover{
+	font-size:18px;
+	display:block;
+	color:white;
+	background-color:#475a7a;
+	border:none;
+}
+
+
+.logo {
+  	display: inline-block;
+}
+
+.navLinksList {
+  	list-style: none;
+  	display: flex;
+}
+
+.navLinks {
+	display: inline-block;
+  	padding: 10px 15px;
+  	text-decoration: none;
+  	color: white;
+	justify-content: center;
+	padding:20px;
+}
+.navLinks a{
+	text-decoration: none;
+	color:white;
+}
+.navLinks:hover {
+  	background-color: #475a7a;
+}
+.navLinks:hover a {
+  color: black;
+}
+.logo img {
+  	width: 175px;
+  	vertical-align: middle;
+}
+
+.MainContainer{
+	display:flex;
+	margin-top:-10px;
+	flex-direction: column;
+	color:white;
+	padding:5px;
+	z-index:2;
+}
+.contentContainer{
+	display:flex;
+	flex-direction:column;
+	width:70%;
+	Background-color:#0b0e13;
+	margin-left:15%;
+}
+.mapAndInfo{
+	display:flex;
+	flex-direction:row;
+}
+.mapBlock{
+	flex:6;
+	order:1;
+	justify-content: center;
+}
+.interactiveMap{
+	margin-top:40px;
+	margin-left:60px;
+	z-index:1;
+}
+.infoBlock{
+	flex:2;
+	order:2;
+	background-color:#475a7a;
+	color:white;
+	z-index:3;
+}
+.aboutTheData{
+	flex:2;
+	background-color:white;
+	color:black;
+}
+.collapsible {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 60%;
+  margin-left: 5%;
+}

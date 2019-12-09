@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+	<link rel="apple-touch-icon" sizes="57x57" href="{{ url_for('static', filename='apple-icon-57x57.png') }}">
+	<link rel="apple-touch-icon" sizes="60x60" href="{{ url_for('static', filename='apple-icon-60x60.png') }}">
+	<link rel="apple-touch-icon" sizes="72x72" href="{{ url_for('static', filename='apple-icon-72x72.png') }}">
+	<link rel="apple-touch-icon" sizes="76x76" href="{{ url_for('static', filename='apple-icon-76x76.png') }}">
+	<link rel="apple-touch-icon" sizes="114x114" href="{{ url_for('static', filename='apple-icon-114x114.png') }}">
+	<link rel="apple-touch-icon" sizes="120x120" href="{{ url_for('static', filename='apple-icon-120x120.png') }}">
+	<link rel="apple-touch-icon" sizes="144x144" href="{{ url_for('static', filename='apple-icon-144x144.png') }}">
+	<link rel="apple-touch-icon" sizes="152x152" href="{{ url_for('static', filename='apple-icon-152x152.png') }}">
+	<link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static', filename='apple-icon-180x180.png') }}">
+	<link rel="icon" type="image/png" sizes="192x192"  href="{{ url_for('static', filename='android-icon-192x192.png') }}">
+	<link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='favicon-32x32.png') }}">
+	<link rel="icon" type="image/png" sizes="96x96" href="{{ url_for('static', filename='favicon-96x96.png') }}">
+	<link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static', filename='favicon-16x16.png') }}">
+	<link rel="manifest" href="{{ url_for('static', filename='manifest.json') }}">
+	<meta name="msapplication-TileColor" content="#ffffff">
+	<meta name="msapplication-TileImage" content="{{ url_for('static', filename='ms-icon-144x144.png') }}">
+	<meta name="theme-color" content="#ffffff">
+
+    <meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+	{% block javascript %}
+        <script src="{{ url_for('static',filename='Chart.min.js') }}"></script>
+        <script src="{{ url_for('static',filename='utils.js') }}"></script>
+		<script src="{{ url_for('static',filename='HomePage.js') }}"></script>
+	{% endblock %}
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='HomePage2.css') }}" />
+
+    <title>USHW Search Results</title>
+  </head>
+  <body>
+
+  <nav class="navbar">
+	<div class="theBar">
+		<a href="http://perlman.mathcs.carleton.edu:5113/" class="logo">
+		  <img alt = "USHW logo" src="{{ url_for('static', filename='logo.png') }}" />
+		</a>
+		<ul class="navLinksList">
+            <li class="navLinks" onClick="toggleNationwideVisibility()">Nationwide Data Search</li>
+			<li class="navLinks" onClick="toggleDropdownStatesVisibility()">By States</li>
+			<li class="navLinks" onClick="toggleDropdownYearsVisibility()">By Years</li>
+			<li class="navLinks"><a href="http://perlman.mathcs.carleton.edu:5113#aboutTheDataBlock">About the Data</a></li>
+			<li class="navLinks"><a href="http://perlman.mathcs.carleton.edu:5113#citationAndDownload">Cite</a></li>
+		</ul>
+	</div>
+
+	<div class="dropDownYears" id="dropDownYears" onmouseover="turnOnDropdownYearsVisibility()">
+		<form method = "get" action = "/#nationalDataTitle">
+			<div class="dropdownYearsButtons">
+				<button><input type="submit" name="startYear" value="1999"></button>
+				<button><input type="submit" name="startYear" value="2000"></button>
+				<button><input type="submit" name="startYear" value="2001"></button>
+				<button><input type="submit" name="startYear" value="2002"></button>
+				<button><input type="submit" name="startYear" value="2003"></button>
+				<button><input type="submit" name="startYear" value="2004"></button>
+				<button><input type="submit" name="startYear" value="2005"></button>
+				<button><input type="submit" name="startYear" value="2006"></button>
+				<button><input type="submit" name="startYear" value="2007"></button>
+				<button><input type="submit" name="startYear" value="2008"></button>
+				<button><input type="submit" name="startYear" value="2009"></button>
+				<button><input type="submit" name="startYear" value="2010"></button>
+				<button><input type="submit" name="startYear" value="2011"></button>
+				<button><input type="submit" name="startYear" value="2012"></button>
+				<button><input type="submit" name="startYear" value="2013"></button>
+				<button><input type="submit" name="startYear" value="2014"></button>
+				<button><input type="submit" name="startYear" value="2015"></button>
+				<button><input type="submit" name="startYear" value="2016"></button>
+				<button><input type="submit" name="startYear" value="2017"></button>
+			</div>
+		</form>
+	</div>
+    <div class="nationwide" id="nationwide">
+            <div id="nSearchText">
+                <h2>Display Nationwide Data For Years:</h2>
+            </div>
+		  	<div class="lookForSearcherN">
+					<form method = "get" action = "/#nationalDataTitle">
+						<div>
+
+							From:<select type=text name="startYear">
+								<option value="1999">1999</option>
+								<option value="2000">2000</option>
+								<option value="2001">2001</option>
+								<option value="2002">2002</option>
+								<option value="2003">2003</option>
+								<option value="2004">2004</option>
+								<option value="2005">2005</option>
+								<option value="2006">2006</option>
+								<option value="2007">2007</option>
+								<option value="2008">2008</option>
+								<option value="2009">2009</option>
+								<option value="2010">2010</option>
+								<option value="2011">2011</option>
+								<option value="2012">2012</option>
+								<option value="2013">2013</option>
+								<option value="2014">2014</option>
+								<option value="2015">2015</option>
+								<option value="2016">2016</option>
+								<option value="2017">2017</option>
+  							</select>
+						</div>
+
+						<div>
+
+							To:<select type=text name="endYear">
+								<option value="1999">1999</option>
+								<option value="2000">2000</option>
+								<option value="2001">2001</option>
+								<option value="2002">2002</option>
+								<option value="2003">2003</option>
+								<option value="2004">2004</option>
+								<option value="2005">2005</option>
+								<option value="2006">2006</option>
+								<option value="2007">2007</option>
+								<option value="2008">2008</option>
+								<option value="2009">2009</option>
+								<option value="2010">2010</option>
+								<option value="2011">2011</option>
+								<option value="2012">2012</option>
+								<option value="2013">2013</option>
+								<option value="2014">2014</option>
+								<option value="2015">2015</option>
+								<option value="2016">2016</option>
+								<option value="2017">2017</option>
+  							</select>
+                        </div>
+						<button><input type=submit id="searchButton" value=Go></button>
+				  </form>
+		  </div>
+    </div>
+	<div class="dropDownStates" id="dropDownStates" onmouseover="turnOnDropdownStatesVisibility()">
+
+		<form method = "get" action = "/stateQuery/" class="dropdownStatesButtons">
+				<h4>A</h4>
+				<button><input type="submit" name="state" value="Alabama"></button>
+				<button><input type="submit" name="state" value="Alaska"></button>
+				<button><input type="submit" name="state" value="Arizona"></button>
+				<button><input type="submit" name="state" value="Arkansas"></button>
+			</form>
+		<form method = "get" action = "/stateQuery/" class="dropdownStatesButtons">
+				<h4>C</h4>
+				<button><input type="submit" name="state" value="California"></button>
+				<button><input type="submit" name="state" value="Colorado"></button>
+				<button><input type="submit" name="state" value="Connecticut"></button>
+			</form>
+		<form method = "get" action = "/stateQuery/" class="dropdownStatesButtons">
+				<h4>D</h4>
+				<button><input type="submit" name="state" value="Delaware"></button>
+			</form>
+		<form method = "get" action = "/stateQuery/" class="dropdownStatesButtons">
+			<h4>F</h4>
+			<button><input type="submit" name="state" value="Florida"></button>
+			</form>
+		<form method = "get" action = "/stateQuery/" class="dropdownStatesButtons">
+						<h4>G</h4>
+			<button><input type="submit" name="state" value="Georgia"></button>
+			</form>
+		<form method = "get" action = "/stateQuery/" class="dropdownStatesButtons">
+						<h4>H</h4>
+			<button><input type="submit" name="state" value="Hawaii"></button>
+			</form>
+		<form method = "get" action = "/stateQuery/" class="dropdownStatesButtons">
+					<h4>I</h4>
+			<button><input type="submit" name="state" value="Idaho"></button>
+			<button><input type="submit" name="state" value="Illinois"></button>
+			<button><input type="submit" name="state" value="Indiana"></button>
+			<button><input type="submit" name="state" value="Iowa"></button>
+			</form>
+		<form method = "get" action = "/stateQuery/" class="dropdownStatesButtons">
+			<h4>K</h4>
+			<button><input type="submit" name="state" value="Kansas"></button>
+			<button><input type="submit" name="state" value="Kentucky"></button>
+		</form>
+		<form method = "get" action = "/stateQuery/" class="dropdownStatesButtons">
+			<h4>L</h4>
+			<button><input type="submit" name="state" value="Louisiana"></button>
+		</form>
+		<form method = "get" action = "/stateQuery/" class="dropdownStatesButtons">
+			<h4>M</h4>
+			<button><input type="submit" name="state" value="Maine"></button>
+			<button><input type="submit" name="state" value="Maryland"></button>
+			<button><input type="submit" name="state" value="Massachusetts"></button>
+			<button><input type="submit" name="state" value="Michigan"></button>
+			<button><input type="submit" name="state" value="Minnesota"></button>
+			<button><input type="submit" name="state" value="Mississippi"></button>
+			<button><input type="submit" name="state" value="Missouri"></button>
+			<button><input type="submit" name="state" value="Montana"></button>
+		</form>
+		<form method = "get" action = "/stateQuery/" class="dropdownStatesButtons">
+			<h4>N</h4>
+			<button><input type="submit" name="state" value="Nebraska"></button>
+			<button><input type="submit" name="state" value="Nevada"></button>
+			<button><input type="submit" name="state" value="New Hampshire"></button>
+			<button><input type="submit" name="state" value="New Jersey"></button>
+			<button><input type="submit" name="state" value="New Mexico"></button>
+			<button><input type="submit" name="state" value="New York"></button>
+			<button><input type="submit" name="state" value="North Carolina"></button>
+			<button><input type="submit" name="state" value="North Dakota"></button>
+		</form>
+		<form method = "get" action = "/stateQuery/" class="dropdownStatesButtons">
+			<h4>O</h4>
+			<button><input type="submit" name="state" value="Ohio"></button>
+			<button><input type="submit" name="state" value="Oklahoma"></button>
+			<button><input type="submit" name="state" value="Oregon"></button>
+		</form>
+		<form method = "get" action = "/stateQuery/" class="dropdownStatesButtons">
+			<h4>P</h4>
+			<button><input type="submit" name="state" value="Pennsylvania"></button>
+		</form>
+		<form method = "get" action = "/stateQuery/" class="dropdownStatesButtons">
+			<h4>R</h4>
+			<button><input type="submit" name="state" value="Rhode Island"></button>
+		</form>
+		<form method = "get" action = "/stateQuery/" class="dropdownStatesButtons">
+			<h4>S</h4>
+			<button><input type="submit" name="state" value="South Carolina"></button>
+			<button><input type="submit" name="state" value="South Dakota"></button>
+		</form>
+		<form method = "get" action = "/stateQuery/" class="dropdownStatesButtons">
+			<h4>T</h4>
+			<button><input type="submit" name="state" value="Tennessee"></button>
+			<button><input type="submit" name="state" value="Texas"></button>
+		</form>
+		<form method = "get" action = "/stateQuery/" class="dropdownStatesButtons">
+			<h4>U</h4>
+			<button><input type="submit" name="state" value="Utah"></button>
+		</form>
+		<form method = "get" action = "/stateQuery/" class="dropdownStatesButtons">
+			<h4>V</h4>
+			<button><input type="submit" name="state" value="Vermont"></button>
+			<button><input type="submit" name="state" value="Virginia"></button>
+		</form>
+		<form method = "get" action = "/stateQuery/" class="dropdownStatesButtons">
+			<h4>W</h4>
+			<button><input type="submit" name="state" value="Washington"></button>
+			<button><input type="submit" name="state" value="West Virginia"></button>
+			<button><input type="submit" name="state" value="Wisconsin"></button>
+			<button><input type="submit" name="state" value="Wyoming"></button>
+		</form>
+		<form method = "get" action = "/stateQuery/" class="dropdownStatesButtons">
+			<h4>Regions</h4>
+			<button><input type="submit" name="state" value="District of Columbia"></button>
+		</form>
+	</div>
+</nav>
+
+	  <div class="MainContainer" id="resultsMC">
+
+			<div class="contentContainer">
+
+				<div class="lookForSearcher">
+					<h1>Start a New Search.</h1>
+					<p>Select a year range and state.</p>
+					<form method = "get" action = "/stateQuery/">
+						<div>
+							Beginning Year:
+							<select type=text name="startYear">
+								<option value="1999">1999</option>
+								<option value="2000">2000</option>
+								<option value="2001">2001</option>
+								<option value="2002">2002</option>
+								<option value="2003">2003</option>
+								<option value="2004">2004</option>
+								<option value="2005">2005</option>
+								<option value="2006">2006</option>
+								<option value="2007">2007</option>
+								<option value="2008">2008</option>
+								<option value="2009">2009</option>
+								<option value="2010">2010</option>
+								<option value="2011">2011</option>
+								<option value="2012">2012</option>
+								<option value="2013">2013</option>
+								<option value="2014">2014</option>
+								<option value="2015">2015</option>
+								<option value="2016">2016</option>
+								<option value="2017">2017</option>
+  							</select>
+						</div>
+
+						<div>
+							Ending Year:
+							<select type=text name="endYear">
+								<option value="1999">1999</option>
+								<option value="2000">2000</option>
+								<option value="2001">2001</option>
+								<option value="2002">2002</option>
+								<option value="2003">2003</option>
+								<option value="2004">2004</option>
+								<option value="2005">2005</option>
+								<option value="2006">2006</option>
+								<option value="2007">2007</option>
+								<option value="2008">2008</option>
+								<option value="2009">2009</option>
+								<option value="2010">2010</option>
+								<option value="2011">2011</option>
+								<option value="2012">2012</option>
+								<option value="2013">2013</option>
+								<option value="2014">2014</option>
+								<option value="2015">2015</option>
+								<option value="2016">2016</option>
+								<option value="2017">2017</option>
+  							</select>
+						</div>
+					<div>
+							State:
+							<select type=text name="state">
+								<option value="	Alabama">Alabama</option>
+								<option value="	Alaska">Alaska</option>
+								<option value="	Arizona">Arizona</option>
+								<option value="	Arkansas">Arkansas</option>
+								<option value="	California">California</option>
+								<option value="	Colorado">Colorado</option>
+								<option value="	Connecticut">Connecticut</option>
+								<option value="	Delaware">Delaware</option>
+								<option value="	Florida">Florida</option>
+								<option value="	Georgia">Georgia</option>
+								<option value="	Hawaii">Hawaii</option>
+								<option value="	Idaho">Idaho</option>
+								<option value="	Illinois">Illinois</option>
+								<option value="	Indiana">Indiana</option>
+								<option value="	Iowa">Iowa</option>
+								<option value="	Kansas">Kansas</option>
+								<option value="	Kentucky">Kentucky</option>
+								<option value="	Louisiana">Louisiana</option>
+								<option value="	Maine">Maine</option>
+								<option value="	Maryland">Maryland</option>
+								<option value="	Massachusetts">Massachusetts</option>
+								<option value="	Michigan">Michigan</option>
+								<option value="Minnesota">Minnesota</option>
+								<option value="	Mississippi">Mississippi</option>
+								<option value="	Missouri">Missouri</option>
+								<option value="	Montana">Montana</option>
+								<option value="	Nebraska">Nebraska</option>
+								<option value="	Nevada">Nevada</option>
+								<option value="	New Hampshire">New Hampshire</option>
+								<option value="	New Jersey">New Jersey</option>
+								<option value="	New Mexico">New Mexico</option>
+								<option value="	New York">New York</option>
+								<option value="	North Carolina">North Carolina</option>
+								<option value="	North Dakota">North Dakota</option>
+								<option value="	Ohio">Ohio</option>
+								<option value="	Oklahoma">Oklahoma</option>
+								<option value="	Oregon">Oregon</option>
+								<option value="	Pennsylvania">Pennsylvania</option>
+								<option value="	Rhode Island">Rhode Island</option>
+								<option value="	South Carolina">South Carolina</option>
+								<option value="	South Dakota">South Dakota</option>
+								<option value="	Tennessee">Tennessee</option>
+								<option value="	Texas">Texas</option>
+								<option value="	Utah">Utah</option>
+								<option value="	Vermont">Vermont</option>
+								<option value="	Virginia">Virginia</option>
+								<option value="	Washington">Washington</option>
+								<option value="	West Virginia">West Virginia</option>
+								<option value="	Wisconsin">Wisconsin</option>
+								<option value="	Wyoming">Wyoming</option>
+								<option value="	District of Columbia">District of Columbia</option>
+							</select>
+					  </div>
+						<button><input type=submit id="searchButton" value=Search></button>
+				  </form>
+		  </div>
+
+				<div id="resultsBlock" class="sectionalBlock">
+                <div class="sectionalTitle" id="aboutTheDataTitle">
+                    <h1>Search Results: {{state}}, from year {{startYear}} to {{endYear}}.</h1>
+                </div>
+                <div id="aboutTheData">
+                        <div class="sectionalInnerBlocks" id="overallNumbersBlock">
+                            <h2>Overall Numbers</h2>
+                            <p>&nbsp;</p>
+                            <h2>{{stateCrudeRate}}</h2>
+                            <p class="genericP">&#8593; State Average Annual Homicides Per 100,000</p>
+                            <h2>{{nationalCrudeRate}}</h2>
+                            <p class="genericP">&#8593; National Average Annual Homicides Per 100,000</p>
+
+                        </div>
+                        <div class="sectionalInnerBlocks" id="meansBlock">
+                            <h2>Data by Means of Homicide</h2>
+                            <p>
+                                {% for key, value in causesAndPercentages.items() %}
+                                    <li>{{ key }}: {{value}}%</li>
+                                {% endfor %}
+                            </p>
+                        </div>
+                    </div>
+		  		</div>
+
+                <div class="sectionalBlock" id="nationalData">
+				<div class="sectionalTitle" id="nationalDataTitle">
+					<h1>Data Visualizations.</h1>
+                	<p>See it more clearly.</p>
+				</div>
+                    <div class=nationalDataInnerBlocks>
+                        <div class="trendText">
+                            <h2>Historical Trend in Homicide Rate of the State of {{state}}:</h2>
+                            <p>Displaying Years {{startYear}}-{{endYear}}.</p>
+                            <p>Put the cursor onto the data points for specific data.</p>
+                        </div>
+
+                        <div class="visual" id="homePageVisuals">
+                            <canvas id="linecanvas"></canvas>
+                            <script>
+                              data = {{inputdata|tojson}};
+                              labels = {{inputlabels|tojson}};
+                              label = {{inputtitle|tojson}};
+
+
+                                window.onload = function() {
+                                    var lineContext = document.getElementById('linecanvas').getContext('2d');
+                                    window.lineChart = new Chart(lineContext, {
+                                        type: 'line',
+                                        data: {
+                                            labels: labels,
+                                            datasets: [{
+                                                label: label,
+                                                pointBackgroundColor: 'rgba(255, 0, 0, 1)',
+                                                backgroundColor: 'rgba(0, 0, 100, 0.2)',
+                                                borderColor: 'rgba(0, 0, 100, 0.9)',
+                                                data: data
+                                                },
+                                                ]
+                                        },
+                                        options: {
+                                            title: {
+                                                display: false,
+                                                text: 'Example line chart for homicides over time'
+                                            },
+                                        }
+                                    });
+                                };
+                            </script>
+                        </div>
+
+                    </div>
+                    <div class=nationalDataInnerBlocks>
+
+
+                        <div class="visual" id="homePageVisuals2">
+													<div class="trendText2">
+	                            <h2>Proportions of Homicides Committed through Different Means:</h2>
+	                            <p>For Years {{startYear}}-{{endYear}} of the State of  {{state}}.</p>
+	                        </div>                            <canvas id="piecanvas"></canvas>
+
+                            <script>
+                            var piedata={{inputpiedata|tojson}};
+                            var pielabels={{inputpielabels|tojson}};
+                            var pielabel={{inputpietitle|tojson}};
+
+
+                            function getRandomNumberInRange(min, max){
+															var randomNumber = Math.random();
+															var preFloorNumber = (randomNumber * (max - min)) + min;
+															var postFloorNumber = Math.floor(preFloorNumber);
+															return postFloorNumber;
+														}
+
+
+														function getRandomColor() {
+															var red = Math.round(getRandomNumberInRange(0, 200));
+															var green = Math.round(getRandomNumberInRange(0, 200));
+															var blue = Math.round(getRandomNumberInRange(0, 200));
+															return 'rgba(' + red + ',' + green + ',' + blue + ')';
+								}
+
+								function getRandomColors(length) {
+									var colors = [];
+									var i;
+									for (j = 0; j < length; j++) {
+										var newColor = getRandomColor();
+										colors[j] = newColor;
+									}
+									return colors;
+								}
+
+
+								function adjustColors(colors, alpha){
+									var adjustedColors = [];
+									for (i = 0; i < colors.length; i++){
+										var currentColor = colors[i];
+										var partialColorString = currentColor.slice(0, currentColor.length - 1);
+										var newColorString = partialColorString + "," + alpha + ")";
+										adjustedColors[i] = newColorString;
+									}
+									return adjustedColors;
+								}
+
+								function makePieChart(){
+									var piecontext = document.getElementById("piecanvas").getContext("2d");
+									var baseColors = getRandomColors(pielabels.length);
+									var outlineColors = adjustColors(baseColors, 1.0);
+									var backgroundColors = adjustColors(baseColors, 0.3);
+
+
+
+									window.pieChart = new Chart(piecontext, {
+										type: "pie",
+										data: {
+											labels: pielabels,
+											datasets: [{
+												label: pielabel,
+												pointBackgroundColor: 'rgba(255, 0, 0, 1)',
+												backgroundColor: backgroundColors,
+												borderColor: outlineColors,
+												data: piedata
+											},
+										]
+									},
+									options: {
+										title: {
+											display: false,
+											text: "this should not display"
+										},
+									}
+									});
+								};
+								makePieChart();
+
+
+
+                            </script>
+                        </div>
+
+                    </div>
+			</div>
+
+			</div>
+		  	</div>
+  </body>
+</html>

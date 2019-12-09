@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+	{% block javascript %}
+		<script src="{{ url_for('static',filename='HomePage.js') }}"></script>
+	{% endblock %}
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='HomePage2.css') }}" />
+	 
+    <title>USHW Search Results</title>
+  </head>
+  <body>
+
+      <nav class="navbar">
+	<div class="theBar">
+		<a href="" class="logo">
+		  <img alt = "USHW logo" src="{{ url_for('static', filename='logo.png') }}" />
+		</a>	
+		<ul class="navLinksList">
+			<li class="navLinks" onClick="toggleDropdownStatesVisibility()">By States</li>
+			<li class="navLinks" onClick="toggleDropdownYearsVisibility()">By Years</li>
+			<li class="navLinks"><a href="#">About the Data</a></li>
+			<li class="navLinks"><a href="#">Cite</a></li>
+		</ul>
+	</div>
+	<div class="dropDownYears" id="dropDownYears" onmouseover="turnOnDropdownYearsVisibility()">
+		<div class="dropdownYearsButtons">
+			<button><input type="submit" name="submit_button" value="1999"></button>
+			<button><input type="submit" name="submit_button" value="2000"></button>
+			<button><input type="submit" name="submit_button" value="2001"></button>
+			<button><input type="submit" name="submit_button" value="2002"></button>
+			<button><input type="submit" name="submit_button" value="2003"></button>
+			<button><input type="submit" name="submit_button" value="2004"></button>
+			<button><input type="submit" name="submit_button" value="2005"></button>
+			<button><input type="submit" name="submit_button" value="2006"></button>
+			<button><input type="submit" name="submit_button" value="2007"></button>
+			<button><input type="submit" name="submit_button" value="2008"></button>
+			<button><input type="submit" name="submit_button" value="2009"></button>
+			<button><input type="submit" name="submit_button" value="2010"></button>
+			<button><input type="submit" name="submit_button" value="2011"></button>
+			<button><input type="submit" name="submit_button" value="2012"></button>
+			<button><input type="submit" name="submit_button" value="2013"></button>
+			<button><input type="submit" name="submit_button" value="2014"></button>
+			<button><input type="submit" name="submit_button" value="2015"></button>
+			<button><input type="submit" name="submit_button" value="2016"></button>
+			<button><input type="submit" name="submit_button" value="2017"></button>
+		</div>
+	</div>
+	<div class="dropDownStates" id="dropDownStates" onmouseover="turnOnDropdownStatesVisibility()">
+		<div class="dropdownStatesButtons">
+			<h4>A</h4>
+			<button><input type="submit" name="submit_button" value="Alabama"></button>
+			<button><input type="submit" name="submit_button" value="Alaska"></button>
+			<button><input type="submit" name="submit_button" value="Arizona"></button>
+			<button><input type="submit" name="submit_button" value="Arkansas"></button>
+		</div>
+		<div class="dropdownStatesButtons">
+			<h4>C</h4>
+			<button><input type="submit" name="submit_button" value="California"></button>
+			<button><input type="submit" name="submit_button" value="Colorado"></button>
+			<button><input type="submit" name="submit_button" value="Connecticut"></button>
+		</div>
+		<div class="dropdownStatesButtons">
+			<h4>D</h4>
+			<button><input type="submit" name="submit_button" value="Delaware"></button>
+		</div>
+		<div class="dropdownStatesButtons">
+		<h4>F</h4>
+		<button><input type="submit" name="submit_button" value="Florida"></button>
+		</div>
+		<div class="dropdownStatesButtons">
+					<h4>G</h4>
+		<button><input type="submit" name="submit_button" value="Georgia"></button>
+		</div>
+		<div class="dropdownStatesButtons">
+					<h4>H</h4>
+		<button><input type="submit" name="submit_button" value="Hawaii"></button>
+		</div>
+		<div class="dropdownStatesButtons">
+					<h4>I</h4>
+		<button><input type="submit" name="submit_button" value="Idaho"></button>
+		<button><input type="submit" name="submit_button" value="Illinois"></button>
+		<button><input type="submit" name="submit_button" value="Indiana"></button>
+		<button><input type="submit" name="submit_button" value="Iowa"></button>
+		</div>
+		<div class="dropdownStatesButtons">
+					<h4>K</h4>
+		<button><input type="submit" name="submit_button" value="Kansas"></button>
+		<button><input type="submit" name="submit_button" value="Kentucky"></button>
+		</div>
+		<div class="dropdownStatesButtons">
+					<h4>L</h4>
+		<button><input type="submit" name="submit_button" value="Louisiana"></button>
+		</div>
+		<div class="dropdownStatesButtons">
+					<h4>M</h4>
+		<button><input type="submit" name="submit_button" value="Maine"></button>
+		<button><input type="submit" name="submit_button" value="Maryland"></button>
+		<button><input type="submit" name="submit_button" value="Massachusett"></button>
+		<button><input type="submit" name="submit_button" value="Michigan"></button>
+		<button><input type="submit" name="submit_button" value="Minnesota"></button>
+		<button><input type="submit" name="submit_button" value="Mississippi"></button>
+		<button><input type="submit" name="submit_button" value="Missouri"></button>
+		<button><input type="submit" name="submit_button" value="Montana"></button>
+		</div>
+		<div class="dropdownStatesButtons">
+					<h4>N</h4>
+		<button><input type="submit" name="submit_button" value="Nebraska"></button>
+		<button><input type="submit" name="submit_button" value="Nevada"></button>
+		<button><input type="submit" name="submit_button" value="New Hampshire"></button>
+		<button><input type="submit" name="submit_button" value="New Jersey"></button>
+		<button><input type="submit" name="submit_button" value="New Mexico"></button>
+		<button><input type="submit" name="submit_button" value="New York"></button>
+		<button><input type="submit" name="submit_button" value="North Carolina"></button>
+		<button><input type="submit" name="submit_button" value="North Dakota"></button>
+		</div>
+		<div class="dropdownStatesButtons">
+					<h4>O</h4>
+		<button><input type="submit" name="submit_button" value="Ohio"></button>
+		<button><input type="submit" name="submit_button" value="Oklahoma"></button>
+		<button><input type="submit" name="submit_button" value="Oregon"></button>
+		</div>
+		<div class="dropdownStatesButtons">
+					<h4>P</h4>
+		<button><input type="submit" name="submit_button" value="Pennsylvania"></button>
+		</div>
+		<div class="dropdownStatesButtons">
+		<h4>R</h4>
+		<button><input type="submit" name="submit_button" value="Rhode Island"></button>
+		</div>
+		<div class="dropdownStatesButtons">
+		<h4>S</h4>
+		<button><input type="submit" name="submit_button" value="South Carolina"></button>
+		<button><input type="submit" name="submit_button" value="South Dakota"></button>
+		</div>
+		<div class="dropdownStatesButtons">
+					<h4>T</h4>
+		<button><input type="submit" name="submit_button" value="Tennessee"></button>
+		<button><input type="submit" name="submit_button" value="Texas"></button>
+		</div>
+		<div class="dropdownStatesButtons">
+					<h4>U</h4>
+		<button><input type="submit" name="submit_button" value="Utah"></button>
+		</div>
+		<div class="dropdownStatesButtons">
+					<h4>V</h4>
+		<button><input type="submit" name="submit_button" value="Vermont"></button>
+		<button><input type="submit" name="submit_button" value="Virginia"></button>
+		</div>
+		<div class="dropdownStatesButtons">
+		<h4>W</h4>
+		<button><input type="submit" name="submit_button" value="Washington"></button>
+		<button><input type="submit" name="submit_button" value="West Virginia"></button>
+		<button><input type="submit" name="submit_button" value="Wisconsin"></button>
+		<button><input type="submit" name="submit_button" value="Wyoming"></button>
+		</div>
+		<div class="dropdownStatesButtons">
+		<h4>Regions</h4>
+		<button><input type="submit" name="submit_button" value="District of Columbia"></button>
+		</div>
+		</div>
+  </nav>
+  
+      <div class="MainContainer">
+			<div class="contentContainer">
+				<div class="lookForBlock">
+					<div class="lookForText">
+						<h1>Let's Look for...</h1>
+						Search for data of specific state and years here.
+					</div>
+					<div class="lookForSearcher">
+ 						<form method=post>
+ 							<dl>
+      							<dt>Beginning Year:
+      							<dd><input type=text placeholder="1999" name=startYear>
+      							<dt>Ending Year:
+      							<dd><input type=text placeholder="2017" name=endYear>
+      							<dt>State:
+      							<dd><input type=text placeholder="Minnesota" name=state>
+      							<dd><input type=submit value=Search>
+    						</dl>
+  						</form>
+					</div>
+				</div>
+				<div class="resultsData">
+					<h1> Search Results:
+					<p>State Average Annual Homicides Per 100,000: {{stateCrudeRate}}</p>
+					<p>National Average Annual Homicides Per 100,000: {{nationalCrudeRate}}</p>
+					<p>Means of Homicide:</p>
+					{% for key, value in causesAndPercentages.items() %}
+    					<li>{{ key }}: {{value}}%</li> 
+					{% endfor %}					
+		  		</div>
+		  	</div>
+	  </div>
+  </body>
+</html>
